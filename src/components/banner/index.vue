@@ -1,13 +1,13 @@
 <template>
-  <div id="EventBanner" :class="cxType">
-    <div v-if="design && design.conferenceLogo" class="banner-content">
+  <div id="EventBanner" :class="[cxType, cxBg]" v-bind:style="bg">
+    <div v-if="design && design.bannerType === 'logo'" class="banner-content">
       <div class="banner-logo">
         <img :src="design.conferenceLogo" />
       </div>
       <h3 class="banner-subtitle" :class="cxFont">{{room.roomName}}</h3>
     </div>
     <div v-else class="banner-content">
-      <h1 class="banner-title">{{room.conferenceName}}</h1>
+      <h1 class="banner-title" :class="cxFont">{{room.conferenceName}}</h1>
       <h3 class="banner-subtitle">{{room.roomName}}</h3>
     </div>
     <div class="banner-float">
@@ -36,6 +36,16 @@ export default {
     },
     cxShadows() {
       return 'shadow-'+this.design.shadows;
+    },
+    cxBg() {
+      return this.design ? 'bg-'+this.design.backgroundType : '';
+    },
+    bg() {
+      const isImage = this.design && this.design.backgroundType === 'image';
+      const isColor = this.design && this.design.backgroundType === 'color';
+      return isImage
+        ? {'background-image': 'url(' + this.design.background + ')'}
+        : (isColor ? {'background-color': this.design.background} : '');
     }
   }
 }
@@ -74,7 +84,15 @@ export default {
       }
       .banner-subtitle {
         text-transform: uppercase;
+        padding: 10px 20px;
+        background: v-bind('design.primaryColour');
+        color: white;
       }
+    }
+    &.bg-image {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     &.--session {
       .banner-content {

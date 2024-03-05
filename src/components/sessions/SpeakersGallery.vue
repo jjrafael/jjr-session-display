@@ -83,7 +83,7 @@ export default {
   .speakers {
     width: 100%;
     height: 250px;
-    margin-top: 60px;
+    margin-top: 40px;
     padding-left: 20px;
     transition: all 0.3s ease;
     display: flex;
@@ -104,7 +104,7 @@ export default {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      transition: all 0.3s ease;
+      transition: all 0.6s ease;
       .speaker-img {
         width: 100px;
         height: 100px;

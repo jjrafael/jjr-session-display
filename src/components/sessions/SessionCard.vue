@@ -6,11 +6,19 @@
       <h5 v-if="status !== 'active'" class="session-head-info">{{relTimeText}}</h5>
     </div>
     <div class="session-body">
+      <div v-if="status === 'active'" class="session-top">
+        <div class="session-type">{{data.type}}</div>
+      </div>
       <h3 class="session-body-title" :class="[cxFont]">{{data.name}}</h3>
       <h4 class="session-body-info session-time font-color-gray-50">
         {{formatTime(data.startTime)}} - {{formatTime(data.endTime)}}
       </h4>
       <h5 v-if="status === 'active'" class="session-body-info">{{data.description}}</h5>
+      <div v-if="status === 'active'" class="session-tags">
+        <div v-for="(d, i) in data.categories" :key="i" class="tag session-tag">
+          {{d}}
+        </div>
+      </div>
       <SpeakersGallery 
         v-if="status === 'active'" 
         :design="design"
@@ -115,6 +123,20 @@ export default {
       float: left;
       padding-left: 20px;
       transition: all 0.3s ease;
+      .session-top {
+        width: 100%;
+        height: 30px;
+        display: block;
+        .session-type {
+          width: max-content;
+          padding: 5px 10px;
+          float: left;
+          background: v-bind('design.primaryColour');
+          font-size: 1rem;
+          color: white;
+          text-transform: uppercase;
+        }
+      }
       .session-body-title {
         color: v-bind('design.primaryColour');
         margin-bottom: 3px;
@@ -127,6 +149,21 @@ export default {
       .session-time {
         margin-bottom: 10px;
         font-size: 0.8rem;
+      }
+      .session-tags {
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+        .tag {
+          width: max-content;
+          padding: 5px 10px;
+          font-size: 10px;
+          color: v-bind('design.secondaryColour');
+          border: 1px solid v-bind('design.secondaryColour');
+          border-radius: 5px;
+          float: left;
+          margin-right: 10px;
+        }
       }
     }
     &.--faded {
