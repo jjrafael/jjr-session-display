@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkjjr_session_display"]=self["webpackChunkjjr_session_display"]||[]).push([[594],{2580:function(s,n,u){u.r(n),u.d(n,{default:function(){return d}});var a=u(6768);const e={class:"about"},r=(0,a.Lk)("h1",null,"This is an about page",-1),t=[r];function i(s,n){return(0,a.uX)(),(0,a.CE)("div",e,t)}var c=u(1241);const o={},l=(0,c.A)(o,[["render",i]]);var d=l}}]);
+//# sourceMappingURL=about.1db52561.js.map
