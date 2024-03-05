@@ -1,6 +1,8 @@
 <template>
   <div id="EventBanner" :class="[cxType, cxBg]" v-bind:style="bg">
-    <div v-if="design && design.bannerType === 'logo'" class="banner-content">
+    <div v-if="design && design.bannerType === 'logo'" 
+      class="banner-content"
+      :class="[cxType === '--session' ? 'md:max-lg:w-full' : '']">
       <div class="banner-logo">
         <img :src="design.conferenceLogo" />
       </div>
@@ -12,7 +14,7 @@
     </div>
     <div class="banner-float">
       <div class="banner-qr">
-        <img :src="room.qr.file" />
+        <img :src="qr" />
       </div>
     </div>
   </div>
@@ -48,6 +50,9 @@ export default {
       return isImage
         ? {'background-image': 'url(' + this.design.background + ')'}
         : (isColor ? {'background-color': this.design.background} : '');
+    },
+    qr() {
+      return this.room ? this.room.qr : '';
     },
     colors() {
       return {
@@ -102,8 +107,8 @@ export default {
       bottom: 40px;
       left: 40px;
       .banner-qr {
-        width: 180px;
-        height: 180px;
+        width: 120px;
+        height: 120px;
         background: white;
         img {
           width: inherit;
@@ -127,6 +132,27 @@ export default {
         .banner-title {
           font-size: 4vw;
         }
+      }
+    }
+  }
+
+  /* responsive */
+  @media (max-width: 1024px) {
+    #EventBanner {
+      &.--session {
+        .banner-content {
+          width: 100%;
+          height: 40vh;
+          justify-content: start;
+          .banner-logo {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+    .banner-float {
+      .banner-qr {
+        display: none;
       }
     }
   }

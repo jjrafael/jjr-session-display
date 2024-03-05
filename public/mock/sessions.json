@@ -1,10 +1,7 @@
 {
 	"conferenceName": "Big Event Conference + Expo",
 	"roomName": "Conference Room B",
-	"qr": {
-		"link": "https://jjrafael.github.io/jjr-session-display/",
-		"file": "/sessions-qr.png"
-	},
+	"qr": "/sessions-qr.png",
 	"design": {
 		"primaryColour":"#5a2ed4",
 		"secondaryColour":"#8e46c4",
@@ -20,8 +17,8 @@
 		{
 			"name":"Keynote Speaker Session - Business Marketing - Be Smart",
 			"description": "Jamie Speight presents his most valuable insights of honey marketing and advertising in the 21st century.",
-			"startTime": "07:00",
-			"endTime": "07:20",
+			"startTime": "10:00",
+			"endTime": "10:24",
 			"allowCheckin": true,
 			"stream": "Business",
 			"type": "Keynote",
@@ -38,8 +35,8 @@
 		{
 			"name":"The Future of Pharma Technology",
 			"description": "Industry-leading insights from a panel of industry-leading professionals. This session highlights the bold and exciting new technologies soon to be embracing the pharmaceutical industries. This session is not to be missed.",
-			"startTime": "07:25",
-			"endTime": "08:30",
+			"startTime": "10:25",
+			"endTime": "10:34",
 			"allowCheckin": false,
 			"stream": "Technology",
 			"type": "Session",
@@ -68,8 +65,8 @@
 		{
 			"name":"Workshop A: OH&S Program",
 			"description": "A workshop is a meeting at which a group of people engage in intensive discussion and activity on a particular subject or project.",
-			"startTime": "08:30",
-			"endTime": "09:00",
+			"startTime": "10:35",
+			"endTime": "11:00",
 			"allowCheckin": true,
 			"stream": "Business",
 			"type": "Workshop",

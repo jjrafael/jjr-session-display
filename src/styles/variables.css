@@ -1,10 +1,10 @@
 /* Global Vars */
 :root {
-  --breakpoint-small: '320px';
-  --breakpoint-medium: '640px';
-  --breakpoint-large: '960px';
-  --breakpoint-x-large: '1280px'; 
-  --breakpoint-xx-large: '1920px';
+  --mobile-w: '420px';
+  --tablet-w: '768px';
+  --desktop-sm-w: '1025px';
+  --desktop-md-w: '1600px';
+  --desktop-lg-w: '1800px';
   --white: rgba(236, 236, 236, 1);
   --black: rgba(21, 21, 21, 1);
   --gray: rgba(66, 66, 66, 1);
@@ -12,10 +12,10 @@
 
 /* Colors */
 .bg-color-gray {
-  background-color: rgba(66, 66, 66, 1);
+  background-color: var(--gray);
 }
 .bg-color-white {
-  background-color: rgba(236, 236, 236, 1);
+  background-color: var(--white);
 }
 .bg-color-black {
   background-color: var(--black);

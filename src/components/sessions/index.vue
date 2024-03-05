@@ -1,5 +1,5 @@
 <template>
-  <div id="EventSessions">
+  <div id="EventSessions" :class="[cxType === '--session' ? 'md:max-lg:w-full' : '']">
     <div  v-if="!allEnded" class="sessions-section" :class="cxType">
       <template v-for="(d, i) in sessions" :key="i">
         <SessionCard 
@@ -68,6 +68,40 @@ export default {
         height: 100vh;
         justify-content: center;
         align-items: end;
+      }
+    }
+  }
+
+  /* responsive */
+  @media (max-width: 1024px) {
+    #EventSessions {
+      width: 100%;
+      .sessions-section {
+        &.--session {
+          width: 100%;
+          min-width: 100%;
+          height: 75vh;
+          padding: 0px;
+          align-items: center;
+          .session.--active {
+            width: 85%;
+            border-radius: 20px;
+            align-items: center;
+          }
+          .session.--next {
+            width: 70%;
+            border-radius: 20px;
+            margin-bottom: 40px;
+          }
+        }
+        &.--break {
+          min-width: 100%;
+          padding: 0px;
+          .session.--next {
+            width: 70%;
+            margin-bottom: 40px;
+          }
+        }
       }
     }
   }
