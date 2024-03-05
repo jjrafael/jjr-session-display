@@ -1,6 +1,10 @@
 {
 	"conferenceName": "Big Event Conference + Expo",
 	"roomName": "Conference Room B",
+	"qr": {
+		"link": "https://jjrafael.github.io/jjr-session-display/",
+		"file": "/sessions-qr.png"
+	},
 	"design": {
 		"primaryColour":"#5a2ed4",
 		"secondaryColour":"#8e46c4",

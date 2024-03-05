@@ -31,6 +31,7 @@ export default {
         resData: {
           conferenceName: null,
           roomName: null,
+          qr: null,
           design: null,
           sessions: []
         }
@@ -51,7 +52,8 @@ export default {
     room() {
       const room = {
         conferenceName: this.resData.conferenceName,
-        roomName: this.resData.roomName
+        roomName: this.resData.roomName,
+        qr: this.resData.qr
       }
       return room;
     },

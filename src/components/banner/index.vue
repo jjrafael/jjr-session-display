@@ -11,7 +11,9 @@
       <h3 class="banner-subtitle">{{room.roomName}}</h3>
     </div>
     <div class="banner-float">
-      <div class="banner-qr"></div>
+      <div class="banner-qr">
+        <img :src="room.qr.file" />
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +34,7 @@ export default {
       return 'roundness-'+this.design.roundness;
     },
     cxFont() {
-      return 'font-fam-'+(this.design.font.toLowerCase());
+      return this.design ? 'font-fam-'+(this.design.font.toLowerCase()) : '';
     },
     cxShadows() {
       return 'shadow-'+this.design.shadows;
@@ -46,7 +48,13 @@ export default {
       return isImage
         ? {'background-image': 'url(' + this.design.background + ')'}
         : (isColor ? {'background-color': this.design.background} : '');
-    }
+    },
+    colors() {
+      return {
+        prim: this.design ? this.design.primaryColour : '',
+        sec: this.design ? this.design.secondaryColour : ''
+      };
+    },
   }
 }
 </script>
@@ -85,8 +93,21 @@ export default {
       .banner-subtitle {
         text-transform: uppercase;
         padding: 10px 20px;
-        background: v-bind('design.primaryColour');
+        background: v-bind('colors.prim');
         color: white;
+      }
+    }
+    .banner-float {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      .banner-qr {
+        width: 180px;
+        height: 180px;
+        background: white;
+        img {
+          width: inherit;
+        }
       }
     }
     &.bg-image {
