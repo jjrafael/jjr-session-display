@@ -17,8 +17,8 @@
 		{
 			"name":"Keynote Speaker Session - Business Marketing - Be Smart",
 			"description": "Jamie Speight presents his most valuable insights of honey marketing and advertising in the 21st century.",
-			"startTime": "10:00",
-			"endTime": "10:24",
+			"startTime": "16:00",
+			"endTime": "16:24",
 			"allowCheckin": true,
 			"stream": "Business",
 			"type": "Keynote",
@@ -35,8 +35,8 @@
 		{
 			"name":"The Future of Pharma Technology",
 			"description": "Industry-leading insights from a panel of industry-leading professionals. This session highlights the bold and exciting new technologies soon to be embracing the pharmaceutical industries. This session is not to be missed.",
-			"startTime": "10:25",
-			"endTime": "10:34",
+			"startTime": "16:25",
+			"endTime": "16:34",
 			"allowCheckin": false,
 			"stream": "Technology",
 			"type": "Session",
@@ -65,8 +65,8 @@
 		{
 			"name":"Workshop A: OH&S Program",
 			"description": "A workshop is a meeting at which a group of people engage in intensive discussion and activity on a particular subject or project.",
-			"startTime": "10:35",
-			"endTime": "11:00",
+			"startTime": "16:35",
+			"endTime": "17:00",
 			"allowCheckin": true,
 			"stream": "Business",
 			"type": "Workshop",
