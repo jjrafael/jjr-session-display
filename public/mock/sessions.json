@@ -7,14 +7,17 @@
 		"roundness":"medium",
 		"shadows": "medium",
 		"font": "Raleway",
-		"conferenceLogo":"https://assets.entegy.com.au/images/18c784a3-7fff-4650-9d81-8964032c75d1.png"
+		"bannerType": "logo",
+		"conferenceLogo":"https://assets.entegy.com.au/images/18c784a3-7fff-4650-9d81-8964032c75d1.png",
+		"backgroundType": "image",
+		"background": "https://assets.entegy.com.au/images/libraries/websitebackgrounds/designs/designs_0059.jpg"
 	},
 	"sessions":[
 		{
 			"name":"Keynote Speaker Session - Business Marketing - Be Smart",
 			"description": "Jamie Speight presents his most valuable insights of honey marketing and advertising in the 21st century.",
-			"startTime": "23:20",
-			"endTime": "23:49",
+			"startTime": "07:00",
+			"endTime": "07:20",
 			"allowCheckin": true,
 			"stream": "Business",
 			"type": "Keynote",
@@ -31,8 +34,8 @@
 		{
 			"name":"The Future of Pharma Technology",
 			"description": "Industry-leading insights from a panel of industry-leading professionals. This session highlights the bold and exciting new technologies soon to be embracing the pharmaceutical industries. This session is not to be missed.",
-			"startTime": "23:49",
-			"endTime": "23:55",
+			"startTime": "07:25",
+			"endTime": "08:30",
 			"allowCheckin": false,
 			"stream": "Technology",
 			"type": "Session",
@@ -61,8 +64,8 @@
 		{
 			"name":"Workshop A: OH&S Program",
 			"description": "A workshop is a meeting at which a group of people engage in intensive discussion and activity on a particular subject or project.",
-			"startTime": "23:56",
-			"endTime": "23:58",
+			"startTime": "08:30",
+			"endTime": "09:00",
 			"allowCheckin": true,
 			"stream": "Business",
 			"type": "Workshop",
