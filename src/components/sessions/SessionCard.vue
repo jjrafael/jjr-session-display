@@ -70,6 +70,7 @@ export default {
       return formatDate(data);
     },
     startRelTimer() {
+      //set timer of the remaining time between now and the next session (ex: "In 2 hours")
       const interval = 1000;
 
       if(!this.relTimer){

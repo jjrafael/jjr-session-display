@@ -74,6 +74,7 @@ export default {
   },
   methods: {
     setSessionSeq() {
+      // create an array of sequence including both sessions and breaks, so it would be lighter when loop-checking on session time
       const len = this.sessions.length;
       const dateFormat = 'MM/DD/YYYY HH:mm:ss';
       let seq = [];
@@ -83,8 +84,7 @@ export default {
           const start = d.validStartTime;
           const end = d.validEndTime;
           const sequence = i + 1;
-          
-
+          //adding sessions to the sequence array
           seq.push({
             ogIndex: i,
             startTime: start,
@@ -99,6 +99,7 @@ export default {
             const endBreak = dayjs(nxtSession.validStartTime).subtract(1, 'second').format(dateFormat);
 
             if(!dayjs(nxtSession.validStartTime).isSame(end)){
+              //adding in-between breaks to the sequence array
               seq.push({
                 ogIndex: i,
                 startTime: startBreak,
@@ -121,6 +122,7 @@ export default {
       }
     },
     setSeq() {
+      //set the status of each item on the sequence on which is the "active" session and "next" session
       const seq = this.sessionSeq;
       
       if(seq && seq.length){
@@ -147,6 +149,7 @@ export default {
       }
     },
     seqTimer() {
+      //start timer to loop-check on the sequence of sessions and breaks
       const seq = this.sessionSeq;
       const last = seq.length - 1;
       const interval = 1000;
@@ -160,6 +163,7 @@ export default {
             const activeEnded = dayjs().isAfter(active.endTime);
             const next = seq[active.index + 1];
             if(activeEnded && isLast){
+              //timer should stop after all sessions ended
               clearInterval(this.timer);
               this.activeSession = null;
               this.activeSeq = null;
@@ -192,11 +196,12 @@ export default {
     }
   },
   mounted() {
+    //call sessions.json from mock folder thru axios and vue-store
     this.$store.dispatch("sessions/getSessions");
-    // this.startTimer();
   },
   watch: {
     sessions(newVal) {
+      //once we have the sessions data, we can now proceed to creating the sequence array and setting the timer
       if(newVal && newVal.length){
         this.setSessionSeq();
       }
@@ -208,7 +213,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #SessionsDisplay {
     position: absolute;

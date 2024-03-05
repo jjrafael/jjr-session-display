@@ -40,11 +40,13 @@ export default {
             : ''))
     },
     setLayer(index) {
+      //define which styling (if we're applying overlapping frames of other speakers images)
       const isLayer1 = this.sideRight.indexOf(index) === 0 || this.sideLeft.indexOf(index) === 0;
       const isLayer2 = this.sideRight.indexOf(index) === 1 || this.sideLeft.indexOf(index) === 1;
       return index === isLayer1 ? '--layer1' : (isLayer2 ? '--layer2' : '');
     },
     startTimer() {
+      //set timer to start auto-carousel on speakers' information
       const interval = 8000; //8sec
 
       if(!this.timer){
